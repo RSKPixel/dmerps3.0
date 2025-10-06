@@ -25,7 +25,7 @@ const BaseTemplate = ({ children }) => {
     },
     pms: {
       icon: 'bi-people',
-      label: 'Payroll Management System',
+      label: 'Payroll Management',
       submenu: [
         { label: 'Employee Register', link: '/pms/employee-register' },
         { label: 'Attendance Register', link: '/pms/attendance-register' },
