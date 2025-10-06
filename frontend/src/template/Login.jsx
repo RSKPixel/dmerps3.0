@@ -3,10 +3,20 @@ import { AuthContext } from './AuthContext';
 
 const Login = () => {
   const { api, loggedIn, setLoggedIn } = useContext(AuthContext);
+  const token = localStorage.getItem('token');
+
+  useEffect(() => {
+    fetch(`${api}/auth/verify`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }, [loggedIn, token]);
 
   const handleLogin = () => {
     // Implement actual login logic here, e.g., API call to authenticate
-    setLoggedIn(true);
   };
 
   return (
